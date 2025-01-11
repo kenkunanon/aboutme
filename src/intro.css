@@ -1,0 +1,137 @@
+.i {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #fffefe, #ffffff); /* พื้นหลังสีอ่อนแบบเทคโนโลยี */
+  color: #2d3436; /* สีตัวอักษรที่คมชัด */
+}
+
+.i-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.i-right {
+  flex: 1;
+  position: relative;
+}
+
+.i-left-wrapper {
+  padding: 50px;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.9); /* สีโปร่งใสที่ดูทันสมัย */
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); /* เงาที่ดูพรีเมียม */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(200, 200, 200, 0.3);
+}
+
+.i-intro {
+  font-size: 28px;
+  font-weight: 400;
+  color: #2c3e50; /* สีตัวอักษรที่ดูเป็นมืออาชีพ */
+}
+
+.i-name {
+  font-size: 50px;
+  font-weight: bold;
+  color: #2980b9; /* สีน้ำเงินที่ดูทันสมัย */
+  text-shadow: 0 2px 6px rgba(41, 128, 185, 0.3); /* เงาเพิ่มมิติ */
+}
+
+.i-title {
+  height: 50px;
+  overflow: hidden;
+}
+
+.i-title-wrapper {
+  height: 100%;
+  animation: move 8s ease-in-out infinite alternate;
+}
+
+@keyframes move {
+  25% {
+      transform: translateY(-50px);
+  }
+  50% {
+      transform: translateY(-100px);
+  }
+  75% {
+      transform: translateY(-150px);
+  }
+  100% {
+      transform: translateY(-200px);
+  }
+}
+
+.i-title-item {
+  height: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #1abc9c; /* สีเขียวนวล ดูทันสมัย */
+  display: flex;
+  align-items: center;
+  text-shadow: 0 1px 4px rgba(26, 188, 156, 0.2);
+}
+
+.i-scroll {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  bottom: 20px;
+  animation: scroll-glow 2s infinite alternate;
+  border: 2px solid #3498db; /* เปลี่ยนสีเป็นฟ้า */
+  border-radius: 50%;
+}
+
+@keyframes scroll-glow {
+  0% {
+      box-shadow: 0 0 8px rgba(52, 152, 219, 0.6);
+  }
+  100% {
+      box-shadow: 0 0 15px rgba(52, 152, 219, 0.9);
+  }
+}
+
+.i-img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  position: absolute;
+  right: 0;
+  border-radius: 15px; /* ทำให้มุมโค้งมน */
+  filter: drop-shadow(0 6px 15px rgba(0, 0, 0, 0.2));
+}
+
+.i-bg {
+  clip-path: polygon(100% 0%, 100% 51%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+  background: linear-gradient(135deg, #389c2f, #076a23); /* สีไล่โทนอ่อนที่ทันสมัย */
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 480px) {
+  .i {
+      flex-direction: column;
+  }
+
+  .i-left-wrapper {
+      padding: 15px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100%;
+  }
+
+  .i-desc {
+      display: none;
+  }
+}
